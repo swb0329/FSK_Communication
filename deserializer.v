@@ -14,11 +14,11 @@ module deserializer(RX_Data,RX_Status,UART_RX,clk);
 	begin
 		if(status==1)
 		begin
-			if(count==216)
+			if(count==216) // change from 216 to 232
 			begin
 			  RX_Data[11:0]<=shreg[11:0];
 				RX_Status<=1;
-				count<=25;
+				count<=9;
 			end
 			else
 			begin

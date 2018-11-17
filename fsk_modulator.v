@@ -3,7 +3,7 @@ module	fsk_modulator(signal_out,signal_in,sysclk);
 	input	signal_in,sysclk;
 	
 	reg signal_out=0;
-	wire	clk_low,clk_high;
+	wire clk_low,clk_high;
 
 	BaudRateGenerator brg(clk_low,clk_high,sysclk);
 
