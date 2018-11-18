@@ -11,7 +11,7 @@ module	fsk_demodulator(signal_out,signal_in,sysclk);
 
 	always@(posedge sysclk)
 	begin
-		if(signal_in==1&&enable==0)
+		if(signal_in==0&&enable==0)
 			enable<=1;
 		if(count==15)
 		begin
@@ -32,8 +32,10 @@ module	fsk_demodulator(signal_out,signal_in,sysclk);
 			signal_out<=1;
 		else		
 		begin
-			if(result_prev>0)
+			if(result>0)
 				signal_out<=0;
+			else
+				signal_out<=1;
 		end
 	end
 endmodule
